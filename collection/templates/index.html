@@ -4,15 +4,8 @@
 {% block title %}Homepage - {{block.super}}{% endblock %}
 
 {% block content %}
-	<h1>Hello World!</h1>
-	<p>There are {{ number|apnumber }} dogs!</p>
-	<p>I am a basic website.</p>
-	<p>
-		{% if number %}
-			the number {{ number }} exists
-		{% else %}
-			The number does not exist 
-		{% endif %}
-	</p>
-	<p>This is my name {{ thing }}</p>
+	{% for thing in things %}
+		<h2>{{ thing.name }}</h2>
+		<p>{{ thing.description }}</p>
+	{% endfor %}
 {% endblock %}
